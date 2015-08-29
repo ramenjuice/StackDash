@@ -1,0 +1,13 @@
+{
+  "items": [
+    {
+      "excerpt_last_edit_date": 1429956295,
+      "body_last_edit_date": 1437445459,
+      "excerpt": "JavaScript (not to be confused with Java) is a dynamic, weakly-typed language typically used for client-side scripting. Use this tag for questions regarding ECMAScript and its various dialects/implementations (excluding ActionScript). Unless a tag for a framework/library is also included, a pure JavaScript answer is expected.",
+      "tag_name": "javascript"
+    }
+  ],
+  "has_more": false,
+  "quota_max": 10000,
+  "quota_remaining": 9918
+}

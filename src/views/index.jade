@@ -1,0 +1,66 @@
+extends layout
+
+block content
+    if users.error_id && testMode == "Off"
+        p(class="throttle_violation")="Error " + users.error_id + ": "
+            span= users.error_message
+    else if testMode == "On"
+        #main_title
+            p= title
+        .content-container
+            div(id="users-wrap", class="panel panel-primary")
+                div(class="panel-heading")
+                    h3 Stack Dash Users
+                div(class="panel-body")
+                    div(id="stackusers")
+                        ul(class="user-list")
+            div(id="questions-wrap", class="panel panel-primary")
+                div(class="panel-heading")
+                    h3 Unanswered Stack Questions
+                div(class="panel-body")
+                    div(id="stackquestions")
+    else
+        script(type='text/javascript').
+            console.log("Requests left: " + #{users.quota_remaining})
+        #main_title
+            p= title
+        .content-container
+            div(id="users-wrap", class="panel panel-primary")
+                div(class="panel-heading")
+                    h3 Stack Dash Users
+                div(class="panel-body")
+                    div(id="stackusers")
+                        ul(class="user-list")
+                            each user, i in users.items
+                                li(class="user-li" + i)
+                                    a(class="profile_image_link", href= user.link)
+                                        img(class="profile_image img-thumbnail", 
+                                            src= user.profile_image)
+                                    .user_info
+                                        a(href= user.link, class="display_name")= user.display_name
+                                        .accept_rate
+                                            unless user.accept_rate
+                                                span= "Accept Rate: NaN"
+                                            else
+                                                span= "Accept Rate: " + user.accept_rate + "%"
+                                        .reputation= "Reputation: " + user.reputation
+                                        .badges
+                                            p= "Bronze: " + user.badge_counts.bronze
+                                            p= "Silver: " + user.badge_counts.silver
+                                            p= "Gold: " + user.badge_counts.gold
+            div(id="questions-wrap", class="panel panel-primary")
+                div(class="panel-heading")
+                    h3 Unanswered Stack Questions
+                div(class="panel-body")
+                    div(id="stackquestions")
+                        ul
+                            each quest, i in questions.items
+                                li
+                                    a(href= quest.link)= quest.title
+                                    p="Answers Given: "
+                                        if quest.answer_count == 0 
+                                            span(class="answers_count_color")= quest.answer_count
+                                    ul(class="tag-bar")
+                                        each tag in quest.tags
+                                            a(class="tag", href="http://stackoverflow.com/questions/tagged/" + tag)= tag
+        
