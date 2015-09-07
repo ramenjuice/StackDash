@@ -9,6 +9,7 @@ var async = require('async');
 var stackReq = new stack();
 
 
+
 // var stackReq = require('../lib/stack.js').request;
 
 /* GET home page. */
@@ -23,13 +24,14 @@ router.get('/', function(req, res, next) {
 
 
     // console.log(typeof zHey);
-    //console.dir(zHey);
+    // console.dir(zHey);
 
     res.render('index', { title: 'Stack Dashboard',
                           users: zHey,
                           questions: zHeyy,
                           testMode: 'Off'});
   }
+
 
 stackReq.getstackData(displayPage);
 });

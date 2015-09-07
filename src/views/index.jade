@@ -48,6 +48,10 @@ block content
                                             p= "Bronze: " + user.badge_counts.bronze
                                             p= "Silver: " + user.badge_counts.silver
                                             p= "Gold: " + user.badge_counts.gold
+                                        if i == 0
+                                            .checkedIn
+                                        else
+                                            .checkedOut
             div(id="questions-wrap", class="panel panel-primary")
                 div(class="panel-heading")
                     h3 Unanswered Stack Questions

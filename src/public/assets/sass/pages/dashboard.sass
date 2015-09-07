@@ -33,7 +33,7 @@ ul
 #users-wrap
     float: left
     display: inline-block
-    width: 300px
+    width: 380px
     overflow: auto
     height: 650px
     margin-bottom: 0px
@@ -43,6 +43,24 @@ ul
     .panel-body
         overflow: auto
         height: 600px
+.checkedIn
+    position: absolute
+    right: -90px
+    width: 75px
+    height: 75px
+    opacity: .6
+    background-image: url('/assets/icons/checked_checkbox_64px.png')
+    background-repeat: no-repeat
+    background-position: center
+.checkedOut
+    position: absolute
+    right: -90px
+    width: 75px
+    height: 75px
+    opacity: .6
+    background-image: url('/assets/icons/unchecked_checkbox_64px.png')
+    background-repeat: no-repeat
+    background-position: center
 .user-list
     li
         background: $white
@@ -59,8 +77,8 @@ ul
             color: #000
             transition: .4s
         &:hover a
-            color: $payblue
-            text-shadow: 0px 0px 4px rgba(0,48,135, .4)
+            color: $palblue
+
     .user-li0,
     .user-li2
         background: $white
@@ -92,7 +110,7 @@ ul
     display: inline-block
     border-radius: $border-radius
     background: $white
-    width: 900px
+    width: 820px
     height: 650px
     margin-bottom: 0px
     .panel-heading

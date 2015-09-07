@@ -4,10 +4,11 @@ var zlib = require('zlib');
 var request = require('request');
 var theToken = 'W8qw9IuFVpWr1hAx7F5qUA))';
 var theKey = 'XC9SA)tZxquHxp0w15gXhQ((';
-var authy = 'key='+theKey
+var authy = 'key='+theKey;
 var taskList;
 var users;
 var quest;
+
 
 
 
